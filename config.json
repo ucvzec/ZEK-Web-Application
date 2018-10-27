@@ -2,5 +2,7 @@
 	"publicJSPath":"/src/js/public/",
 	"serverJSPath":"/src/js/server/",
 	
+	"publicIMGPath":"/img/public/",
+
 	"publicCSSPath":"/css/"
 }

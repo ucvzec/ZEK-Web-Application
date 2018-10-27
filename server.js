@@ -44,6 +44,11 @@ io.on('connection',(socket)=>{
 const {sendFileIfExists} = require(path.resolve(__dirname+config.serverJSPath+"resourceAssist.js"));
 //this method checks if the provided path exists, and if so it sends the file. If not it sends a 404 error code
 
+app.get("/img/:imgFileName",(req,res)=>{
+	console.log(`Checking for img ${req.params.imgFileName}`);
+	sendFileIfExists(path.resolve(__dirname+config.publicIMGPath+req.params.imgFileName),res);
+});
+
 app.get("/css/:styleFileName",(req,res)=>{
 	sendFileIfExists(path.resolve(__dirname+config.publicCSSPath+req.params.styleFileName),res);
 });
